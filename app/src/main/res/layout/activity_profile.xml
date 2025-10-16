@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ProfileActivity">
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <include
+            android:id="@+id/barraP"
+            layout="@layout/toolbar" />
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/btnOk"
+            android:layout_below="@id/barraP"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="24dp">
+
+                <ImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="@string/app_name"
+                    android:padding="24dp"
+                    android:src="@drawable/ic_photo"
+                    android:onClick="@{(v) -> clickListener.onClick(v)}"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_foto_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ivProfile"
+                    android:layout_alignStart="@id/ivProfile"
+                    android:layout_alignEnd="@id/ivProfile"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text="Foto"
+                    android:textColor="#666666" />
+
+                <TextView
+                    android:id="@+id/tv_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_toEndOf="@id/ivProfile"
+                    android:text="Pablo Molina"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_user_role"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_user_name"
+                    android:layout_alignStart="@id/tv_user_name"
+                    android:text="Capturista"
+                    android:textColor="#4A4A4A"
+                    android:textSize="16sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/form_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_foto_label"
+                    android:layout_marginTop="32dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="25dp"
+                        app:boxCornerRadiusBottomStart="25dp"
+                        app:boxCornerRadiusTopEnd="25dp"
+                        app:boxCornerRadiusTopStart="25dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Correo" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:boxCornerRadiusBottomEnd="25dp"
+                        app:boxCornerRadiusBottomStart="25dp"
+                        app:boxCornerRadiusTopEnd="25dp"
+                        app:boxCornerRadiusTopStart="25dp"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="#007BFF">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Contraseña actual"
+                            android:inputType="textPassword" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:boxCornerRadiusBottomEnd="25dp"
+                        app:boxCornerRadiusBottomStart="25dp"
+                        app:boxCornerRadiusTopEnd="25dp"
+                        app:boxCornerRadiusTopStart="25dp"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="#007BFF">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Nueva contraseña"
+                            android:inputType="textPassword" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:boxCornerRadiusBottomEnd="25dp"
+                        app:boxCornerRadiusBottomStart="25dp"
+                        app:boxCornerRadiusTopEnd="25dp"
+                        app:boxCornerRadiusTopStart="25dp"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="#007BFF">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Confirmar contraseña"
+                            android:inputType="textPassword" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnOk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            style="@style/Button"
+            android:onClick="@{(v) -> clickListener.onClick(v)}"
+            android:text="aceptar" />
+    </RelativeLayout>
+
+</layout>

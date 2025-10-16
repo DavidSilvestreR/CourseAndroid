@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">CourseAndroid</string>
+    <string name="txtEt">Usuario</string>
+    <string name="txtEt2">Contraseña</string>
+    <string name="welcomeRegister">Bienvenido a nuestro registro, ingresa los siguientes datos para registrarte.</string>
+    <string name="name">Nombre</string>
+    <string name="mail">Correo</string>
+    <string name="confirm_terms">Acepto terminos y condiciones</string>
+    <string name="register">Registrar</string>
+    <string name="txt_positive">Aceptar</string>
+    <string name="txt_negative">Cancelar</string>
+
+
+</resources>
